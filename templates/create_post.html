@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #D6EEEE;
+      }
+      </style>
+  </head>
+    <body>
+        {{data}}
+        <h1>TABLE</h1>
+        <form action="#" method="POST">
+            <input type="text" name="title" id="title" placeholder="Enter The title"><br><br>
+            <input type="text" name="content" id="content" placeholder="Enter The content"><br><br>
+            <input type="text" name="published" id="published" placeholder="Enter The author name"><br><br>
+            <input type="submit" value="submit"><br>
+        </form>
+          <table border="1">
+              <tr>
+                <th>title</th>
+                <th>content</th>
+                <th>published</th>
+                
+              </tr>
+            {% for i in data %}
+              <tr>
+                <td>{{i.title}}</td>
+                <td>{{i.content}}</td>
+                <td>{{i.published}}</td>
+
+              </tr>
+              {%endfor%}
+            </table>
+</body>
+</html>
